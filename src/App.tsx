@@ -6,10 +6,12 @@ import { EmployerDetails, EmployerList } from './components/EmployerList';
 
 const pastAndCurrentEmployers: EmployerDetails[] = [
   { 
+    name: "Spiff Pty Ltd",
     href: "https://editor.spiff.com.au/",
     src: "img/spiff-logo.png" 
   },
   { 
+    name: "Learn District",
     href: "http://learndistrict.com/",
     src: "img/ld-logo.png" 
   }
@@ -23,6 +25,7 @@ class App extends Component {
           <h1 className="title">Liam Parker</h1>
           <div className="sub">
             <Section title="About me.">
+              <img className="personal-photo" src="https://avatars3.githubusercontent.com/u/7558040?s=460&v=4" />
               <p className="bio">
                 I am a junior software developer based in Melbourne, Australia. 
                 I currently work at #Spiff, an exciting tech startup in Southbank.

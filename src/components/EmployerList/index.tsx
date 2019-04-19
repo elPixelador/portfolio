@@ -3,6 +3,7 @@ import * as React from 'react'
 import './styles.scss'
 
 export interface EmployerDetails {
+    name: string;
     href: string;
     src: string;
 }
@@ -23,7 +24,7 @@ export class EmployerList extends React.Component<EmployerListPublicProps> {
     private renderEmployer(details: EmployerDetails): React.ReactNode {
         return (
             <a key={details.href} href={details.href} target="_blank">
-                <img src={details.src} />
+                <img src={details.src} alt={details.name} />
             </a>
         );
     }
