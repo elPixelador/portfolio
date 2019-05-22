@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './styles.scss';
-import { Terminal } from './components/Terminal';
 import { Section } from './components/Section';
-import { EmployerDetails, EmployerList } from './components/EmployerList';
+import { ElementDetails, ElementList } from './components/ElementList';
 
-const pastAndCurrentEmployers: EmployerDetails[] = [
+import './styles.scss';
+
+const pastAndCurrentEmployers: ElementDetails[] = [
   { 
     name: "Spiff Pty Ltd",
     href: "https://editor.spiff.com.au/",
@@ -14,6 +14,14 @@ const pastAndCurrentEmployers: EmployerDetails[] = [
     name: "Learn District",
     href: "http://learndistrict.com/",
     src: "img/ld-logo.png" 
+  }
+]
+
+const contributions: ElementDetails[] = [
+  { 
+    name: "OpenRCT2 ",
+    href: "https://openrct2.org/",
+    src: "img/openrct2-logo.png" 
   }
 ]
 
@@ -33,10 +41,10 @@ class App extends Component {
               </p>
             </Section>
             <Section title="People I've worked with.">
-              <EmployerList employerList={pastAndCurrentEmployers}/>
+              <ElementList elements={pastAndCurrentEmployers} size="standard" />
             </Section>
             <Section title="Contributions and personal work.">
-              <p>Coming Soon</p>
+            <ElementList elements={contributions} size="small" />
             </Section>
             <Section title="Links.">
               <div className="social-media">
@@ -49,9 +57,6 @@ class App extends Component {
               </div>
             </Section>
           </div>
-        </div>
-        <div className="term-wrapper">
-          <Terminal />
         </div>
       </div>
     );

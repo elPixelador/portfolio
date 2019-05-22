@@ -2,26 +2,28 @@ import * as React from 'react'
 
 import './styles.scss'
 
-export interface EmployerDetails {
+export interface ElementDetails {
     name: string;
     href: string;
     src: string;
 }
 
 export interface EmployerListPublicProps {
-    employerList: EmployerDetails[]
+    elements: ElementDetails[]
+    size: 'small' | 'standard'
 }
 
-export class EmployerList extends React.Component<EmployerListPublicProps> {
+export class ElementList extends React.Component<EmployerListPublicProps> {
+
     render() {
         return (
-            <div className="companies">
-                {this.props.employerList.map(employer => this.renderEmployer(employer))}
+            <div className={`element-list ${this.props.size}`}>
+                {this.props.elements.map(element => this.renderElement(element))}
             </div>
         );
     }
 
-    private renderEmployer(details: EmployerDetails): React.ReactNode {
+    private renderElement(details: ElementDetails): React.ReactNode {
         return (
             <a key={details.href} href={details.href} target="_blank">
                 <img src={details.src} alt={details.name} />

@@ -12,8 +12,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "typeface-quicksand": "0.0.71",
-    "typescript": "3.4.3",
-    "xterm": "^3.12.2"
+    "typescript": "3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
