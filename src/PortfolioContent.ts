@@ -20,13 +20,13 @@ export const employers: ElementDetails[] = [
 export const projects: ElementDetails[] = [
     {
         name: "Lazurite",
-        href: "https://openrct2.org/",
-        src: "img/openrct2-logo.png",
+        href: "https://github.com/elInfidel/lazurite",
+        src: "",
     },
     {
         name: "Pyrite",
-        href: "https://www.babylonjs.com/",
-        src: "img/babylon-logo.png",
+        href: "https://github.com/elInfidel/pyrite-gbc",
+        src: "",
     },
 ];
 
