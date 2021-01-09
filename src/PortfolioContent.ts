@@ -1,14 +1,13 @@
-
-interface ElementDetails {
+export interface ElementDetails {
     name: string;
     href: string;
     src: string;
 }
 
-const employers: ElementDetails[] = [
+export const employers: ElementDetails[] = [
     {
         name: "Spiff Pty Ltd",
-        href: "https://editor.spiff.com.au/",
+        href: "https://spiff.com.au/",
         src: "img/spiff-logo.png",
     },
     {
