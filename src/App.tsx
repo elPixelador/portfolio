@@ -1,66 +1,82 @@
-import React, { Component } from 'react';
-import { Section } from './components/Section';
-import { ElementDetails, ElementList } from './components/ElementList';
+import {
+    createMuiTheme,
+    Grid,
+    makeStyles,
+    ThemeProvider,
+    Typography,
+} from "@material-ui/core";
+import React from "react";
+import ContentCard from "./ContentCard";
+import "typeface-quicksand";
 
-import './styles.scss';
+const theme = createMuiTheme({
+    spacing: 8 * 5,
+    typography: {
+        fontFamily: "Quicksand",
+    },
+});
 
-const pastAndCurrentEmployers: ElementDetails[] = [
-  { 
-    name: "Spiff Pty Ltd",
-    href: "https://editor.spiff.com.au/",
-    src: "img/spiff-logo.png" 
-  },
-  { 
-    name: "Learn District",
-    href: "http://learndistrict.com/",
-    src: "img/ld-logo.png" 
-  }
-]
+const useAppStyles = makeStyles((theme) => {
+    return {
+        page: {
+            margin: theme.spacing(5),
+        },
+        profilePicture: {
+            width: 150,
+            height: 150,
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "block",
+            borderRadius: 100,
+        },
+    };
+});
 
-const contributions: ElementDetails[] = [
-  { 
-    name: "OpenRCT2 ",
-    href: "https://openrct2.org/",
-    src: "img/openrct2-logo.png" 
-  }
-]
-
-class App extends Component {
-  render() {
+const App: React.FunctionComponent = () => {
+    const classes = useAppStyles();
     return (
-      <div className="flex-wrapper">
-        <div className="main-content">
-          <h1 className="title">Liam Parker</h1>
-          <div className="sub">
-            <Section title="About me.">
-              <img className="personal-photo" src="https://avatars3.githubusercontent.com/u/7558040?s=460&v=4" />
-              <p className="bio">
-                I am a junior software developer based in Melbourne, Australia. 
-                I currently work at #Spiff, an exciting tech startup in Southbank.
-                We're working on a cloud based packaging customization platform.
-              </p>
-            </Section>
-            <Section title="People I've worked with.">
-              <ElementList elements={pastAndCurrentEmployers} size="standard" />
-            </Section>
-            <Section title="Contributions and personal work.">
-            <ElementList elements={contributions} size="small" />
-            </Section>
-            <Section title="Links.">
-              <div className="social-media">
-                <a href="https://github.com/elInfidel" target="_blank">
-                  <img src="img/github-logo.png" />
-                </a>
-                <a href="https://www.linkedin.com/in/liam-parker-40063648/" target="_blank">
-                  <img src="img/linked-in-logo.png" />
-                </a>
-              </div>
-            </Section>
-          </div>
-        </div>
-      </div>
+        <ThemeProvider theme={theme}>
+            <div className={classes.page}>
+                <Grid container justify="center" alignItems="center">
+                    <Grid item xs={12} md={6}>
+                        <img
+                            className={classes.profilePicture}
+                            src="https://avatars3.githubusercontent.com/u/7558040?s=460&v=4"
+                            alt="a portrait of liam"
+                        />
+                        <Typography align="center" variant="h2">
+                            Liam Parker
+                        </Typography>
+                        <Typography align="center">
+                            I am a software developer based in Melbourne,
+                            Australia. I currently work at #Spiff, an exciting
+                            tech startup in Docklands. We're working on a cloud
+                            based product personalization platform.
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid
+                    container
+                    justify="center"
+                    alignItems="center"
+                    spacing={1}
+                >
+                    <Grid item xs={6}>
+                        <ContentCard title="Employment History" />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentCard title="Personal Projects" />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentCard title="Open Source Contributions" />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentCard title="Social Media" />
+                    </Grid>
+                </Grid>
+            </div>
+        </ThemeProvider>
     );
-  }
-}
+};
 
 export default App;
