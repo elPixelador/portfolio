@@ -28,6 +28,12 @@ const useAppStyles = makeStyles((theme) => {
         footer: {
             margin: theme.spacing(1),
         },
+        footerContent: {
+            width: "100%",
+            [theme.breakpoints.up("md")]: {
+                width: "50%",
+            },
+        },
     };
 });
 
@@ -73,9 +79,11 @@ const App: React.FunctionComponent = () => {
             </div>
             <Divider />
             <footer className={classes.footer}>
-                <Typography variant="caption">
-                    &copy; Copyright 2021, Liam Parker
-                </Typography>
+                <div className={classes.footerContent}>
+                    <Typography variant="caption">
+                        &copy; Copyright 2021, Liam Parker
+                    </Typography>
+                </div>
             </footer>
         </>
     );
