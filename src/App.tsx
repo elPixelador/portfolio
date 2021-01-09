@@ -26,9 +26,7 @@ const useAppStyles = makeStyles((theme) => {
             borderRadius: 100,
         },
         footer: {
-            margin: theme.spacing(1),
-        },
-        footerContent: {
+            margin: theme.spacing(1, "auto"),
             width: "100%",
             [theme.breakpoints.up("md")]: {
                 width: "50%",
@@ -79,11 +77,10 @@ const App: React.FunctionComponent = () => {
             </div>
             <Divider />
             <footer className={classes.footer}>
-                <div className={classes.footerContent}>
-                    <Typography variant="caption">
-                        &copy; Copyright 2021, Liam Parker
-                    </Typography>
-                </div>
+                <Typography variant="caption">
+                    &copy; Copyright 2015 - {new Date().getFullYear()}, Liam
+                    Parker
+                </Typography>
             </footer>
         </>
     );
