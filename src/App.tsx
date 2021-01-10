@@ -13,7 +13,7 @@ import ElementList from "./ElementList";
 const useAppStyles = makeStyles((theme) => {
     return {
         content: {
-            margin: theme.spacing(1, "auto"),
+            margin: theme.spacing(0, "auto"),
             width: "100%",
             [theme.breakpoints.up("md")]: {
                 width: "50%",
