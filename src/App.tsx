@@ -80,11 +80,15 @@ const App: React.FunctionComponent = () => {
                 </Grid>
             </Grid>
             <Divider />
-            <footer className={classes.content}>
-                <Typography variant="caption">
-                    &copy; Copyright 2015 - {new Date().getFullYear()}, Liam
-                    Parker
-                </Typography>
+            <footer>
+                <Grid container spacing={1} className={classes.content}>
+                    <Grid item xs={12}>
+                        <Typography variant="caption">
+                            &copy; Copyright 2015 - {new Date().getFullYear()},
+                            Liam Parker
+                        </Typography>
+                    </Grid>
+                </Grid>
             </footer>
         </>
     );
