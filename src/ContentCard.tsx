@@ -6,7 +6,7 @@ const useContentCardStyles = makeStyles((theme) => {
         title: {
             padding: theme.spacing(1),
             border: "solid 1px lightgray",
-            borderRadius: 10,
+            borderRadius: 5,
         },
     };
 });

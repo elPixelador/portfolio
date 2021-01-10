@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 const theme = createMuiTheme({
-    spacing: 8 * 5,
+    spacing: 8 * 3,
     typography: {
         fontFamily: "Quicksand",
     },
