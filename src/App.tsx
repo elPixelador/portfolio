@@ -27,6 +27,9 @@ const useAppStyles = makeStyles((theme) => {
             display: "block",
             borderRadius: 100,
         },
+        footer: {
+            marginTop: theme.spacing(1),
+        },
     };
 });
 
@@ -79,7 +82,7 @@ const App: React.FunctionComponent = () => {
                     </ContentSection>
                 </Grid>
             </Grid>
-            <Divider />
+            <Divider className={classes.footer} />
             <footer>
                 <Grid container spacing={1} className={classes.content}>
                     <Grid item xs={12}>
