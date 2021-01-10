@@ -16,7 +16,13 @@ const useAppStyles = makeStyles((theme) => {
             margin: theme.spacing(0, "auto"),
             width: "100%",
             [theme.breakpoints.up("md")]: {
-                width: "50%",
+                width: "60%",
+            },
+            [theme.breakpoints.up("lg")]: {
+                width: "40%",
+            },
+            [theme.breakpoints.up("xl")]: {
+                width: "30%",
             },
         },
         profilePicture: {
@@ -48,10 +54,10 @@ const App: React.FunctionComponent = () => {
                         Liam Parker
                     </Typography>
                     <Typography align="center">
-                        I am a software developer based in Melbourne, Australia.
-                        I currently work at #Spiff, an exciting tech startup in
-                        Docklands. We're working on a cloud based product
-                        personalization platform.
+                        I am a <b>software developer</b> based in Melbourne,
+                        Australia. I currently work at <b>Spiff</b>, an exciting
+                        tech startup in Docklands. We're working on a cloud
+                        based product personalization platform.
                     </Typography>
                 </Grid>
             </Grid>
