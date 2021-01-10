@@ -1,6 +1,6 @@
 import { Divider, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import ContentCard from "./ContentCard";
+import ContentSection from "./ContentCard";
 import "typeface-quicksand";
 import {
     contributions,
@@ -8,7 +8,7 @@ import {
     mediaLinks,
     projects,
 } from "./PortfolioContent";
-import IconList from "./IconList";
+import ElementList from "./ElementList";
 
 const useAppStyles = makeStyles((theme) => {
     return {
@@ -52,26 +52,31 @@ const App: React.FunctionComponent = () => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid container className={classes.content} justify="center">
+            <Grid
+                container
+                spacing={1}
+                className={classes.content}
+                justify="center"
+            >
                 <Grid item xs={12} md={6}>
-                    <ContentCard title="Employment History">
-                        <IconList elements={employers} />
-                    </ContentCard>
+                    <ContentSection title="Employment History">
+                        <ElementList elements={employers} />
+                    </ContentSection>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <ContentCard title="Personal Projects">
-                        <IconList elements={projects} />
-                    </ContentCard>
+                    <ContentSection title="Personal Projects">
+                        <ElementList elements={projects} />
+                    </ContentSection>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <ContentCard title="Open Source Contributions">
-                        <IconList elements={contributions} />
-                    </ContentCard>
+                    <ContentSection title="Open Source">
+                        <ElementList elements={contributions} />
+                    </ContentSection>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <ContentCard title="Social Media">
-                        <IconList elements={mediaLinks} />
-                    </ContentCard>
+                    <ContentSection title="Social Media">
+                        <ElementList elements={mediaLinks} />
+                    </ContentSection>
                 </Grid>
             </Grid>
             <Divider />

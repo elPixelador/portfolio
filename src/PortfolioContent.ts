@@ -21,12 +21,12 @@ export const projects: ElementDetails[] = [
     {
         name: "Lazurite",
         href: "https://github.com/elInfidel/lazurite",
-        src: "",
+        src: "img/lazurite-logo.png",
     },
     {
         name: "Pyrite",
         href: "https://github.com/elInfidel/pyrite-gbc",
-        src: "",
+        src: "img/pyrite-logo.png",
     },
 ];
 

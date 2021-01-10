@@ -1,28 +1,29 @@
 import * as React from "react";
-import { Divider, makeStyles, Paper, Typography } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 
 const useContentCardStyles = makeStyles((theme) => {
     return {
         title: {
             padding: theme.spacing(1),
+            border: "solid 1px lightgray",
+            borderRadius: 10,
         },
     };
 });
 
-const ContentCard: React.FunctionComponent<{
+const ContentSection: React.FunctionComponent<{
     title: string;
 }> = (props) => {
     const { children, title } = props;
     const classes = useContentCardStyles();
     return (
-        <Paper>
-            <Typography className={classes.title} variant="h5">
+        <div>
+            <Typography className={classes.title} variant="h5" align="center">
                 {title}
             </Typography>
-            <Divider />
             {children}
-        </Paper>
+        </div>
     );
 };
 
-export default ContentCard;
+export default ContentSection;
