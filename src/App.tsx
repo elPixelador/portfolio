@@ -1,4 +1,4 @@
-import { Divider, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import ContentSection from "./ContentCard";
 import "typeface-quicksand";
@@ -11,18 +11,34 @@ import {
 import ElementList from "./ElementList";
 
 const useAppStyles = makeStyles((theme) => {
+    const border = "solid 1px rgba(54, 54, 54, 0.2)";
     return {
         content: {
             margin: theme.spacing(0, "auto"),
+            padding: theme.spacing(0, 2),
             width: "100%",
+            borderLeft: border,
+            borderRight: border,
             [theme.breakpoints.up("md")]: {
                 width: "60%",
             },
             [theme.breakpoints.up("lg")]: {
-                width: "40%",
+                width: "50%",
             },
             [theme.breakpoints.up("xl")]: {
-                width: "30%",
+                width: "40%",
+            },
+            backgroundColor: "#fcfcfc",
+            "&:first-of-type": {
+                marginTop: theme.spacing(2),
+                paddingTop: theme.spacing(2),
+                borderRadius: "5px 5px 0px 0px",
+                borderTop: border,
+            },
+            "&:last-of-type": {
+                paddingBottom: theme.spacing(2),
+                borderRadius: "0px 0px 5px 5px",
+                borderBottom: border,
             },
         },
         profilePicture: {
@@ -33,8 +49,8 @@ const useAppStyles = makeStyles((theme) => {
             display: "block",
             borderRadius: 100,
         },
-        footer: {
-            marginTop: theme.spacing(1),
+        description: {
+            margin: theme.spacing(1, 0),
         },
     };
 });
@@ -47,13 +63,13 @@ const App: React.FunctionComponent = () => {
                 <Grid item xs={12}>
                     <img
                         className={classes.profilePicture}
-                        src="https://avatars3.githubusercontent.com/u/7558040?s=460&v=4"
+                        src="https://avatars3.githubusercontent.com/u/7558040"
                         alt="a portrait of liam"
                     />
                     <Typography align="center" variant="h2">
                         Liam Parker
                     </Typography>
-                    <Typography align="center">
+                    <Typography align="center" className={classes.description}>
                         I am a <b>software developer</b> based in Melbourne,
                         Australia. I currently work at <b>Spiff</b>, an exciting
                         tech startup in Docklands. We're working on a cloud
@@ -87,18 +103,13 @@ const App: React.FunctionComponent = () => {
                         <ElementList elements={mediaLinks} />
                     </ContentSection>
                 </Grid>
+                <footer>
+                    <Typography variant="caption">
+                        &copy; Copyright 2015 - {new Date().getFullYear()}, Liam
+                        Parker
+                    </Typography>
+                </footer>
             </Grid>
-            <Divider className={classes.footer} />
-            <footer>
-                <Grid container spacing={1} className={classes.content}>
-                    <Grid item xs={12}>
-                        <Typography variant="caption">
-                            &copy; Copyright 2015 - {new Date().getFullYear()},
-                            Liam Parker
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </footer>
         </>
     );
 };

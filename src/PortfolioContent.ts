@@ -53,11 +53,13 @@ export const contributions: ElementDetails[] = [
 export const mediaLinks: ElementDetails[] = [
     {
         primary: "Github",
+        secondary: "More of My Code",
         href: "https://github.com/elInfidel",
         src: "img/github-logo.png",
     },
     {
         primary: "LinkedIn",
+        secondary: "Get in Touch",
         href: "https://www.linkedin.com/in/liam-parker-40063648/",
         src: "img/linked-in-logo.png",
     },
