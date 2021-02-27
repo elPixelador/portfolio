@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 const theme = createMuiTheme({
     spacing: 8 * 3,
     typography: {
-        fontFamily: "Quicksand",
+        fontFamily: "Quicksand, Helvetica",
     },
 });
 
