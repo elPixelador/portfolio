@@ -16,17 +16,18 @@ const useAppStyles = makeStyles((theme) => {
         content: {
             margin: theme.spacing(0, "auto"),
             padding: theme.spacing(0, 2),
+            maxWidth: 850,
             width: "100%",
             borderLeft: border,
             borderRight: border,
             [theme.breakpoints.up("md")]: {
-                width: "60%",
+                width: "70%",
             },
             [theme.breakpoints.up("lg")]: {
-                width: "50%",
+                width: "60%",
             },
             [theme.breakpoints.up("xl")]: {
-                width: "40%",
+                width: "35%",
             },
             backgroundColor: "#fcfcfc",
             "&:first-of-type": {
