@@ -32,17 +32,11 @@ const useAppStyles = makeStyles((theme) => {
                 width: "35%",
             },
             backgroundColor: "#fcfcfc",
-            "&:first-of-type": {
-                marginTop: theme.spacing(2),
-                paddingTop: theme.spacing(2),
-                borderRadius: "5px 5px 0px 0px",
-                borderTop: border,
-            },
-            "&:last-of-type": {
-                paddingBottom: theme.spacing(2),
-                borderRadius: "0px 0px 5px 5px",
-                borderBottom: border,
-            },
+            borderRadius: "5px",
+            marginTop: theme.spacing(2),
+            paddingTop: theme.spacing(2),
+            paddingBottom: theme.spacing(2),
+            borderBottom: border,
         },
         profilePicture: {
             width: 150,
@@ -55,6 +49,13 @@ const useAppStyles = makeStyles((theme) => {
         description: {
             margin: theme.spacing(1, 0),
         },
+        footer: {
+            width: "100%",
+        },
+        footerText: {
+            display: "inline-block",
+            width: "100%",
+        },
     };
 });
 
@@ -62,14 +63,23 @@ const App: React.FunctionComponent = () => {
     const classes = useAppStyles();
     return (
         <>
-            <Grid container className={classes.content} justify="center">
+            <Grid
+                container
+                className={classes.content}
+                justify="center"
+                spacing={1}
+            >
                 <Grid item xs={12}>
                     <img
                         className={classes.profilePicture}
                         src="https://avatars3.githubusercontent.com/u/7558040"
                         alt="a portrait of liam"
                     />
-                    <Typography align="center" variant="h2">
+                    <Typography
+                        align="center"
+                        variant="h2"
+                        className={classes.description}
+                    >
                         Liam Parker
                     </Typography>
                     <Typography align="center" className={classes.description}>
@@ -79,13 +89,6 @@ const App: React.FunctionComponent = () => {
                         based product personalization platform.
                     </Typography>
                 </Grid>
-            </Grid>
-            <Grid
-                container
-                spacing={1}
-                className={classes.content}
-                justify="center"
-            >
                 <Grid item xs={12} md={6}>
                     <ContentSection title="Employment History">
                         <ElementList elements={employers} />
@@ -106,12 +109,18 @@ const App: React.FunctionComponent = () => {
                         <ElementList elements={mediaLinks} />
                     </ContentSection>
                 </Grid>
-                <footer>
-                    <Typography variant="caption">
-                        &copy; Copyright 2015 - {new Date().getFullYear()}, Liam
-                        Parker
-                    </Typography>
-                </footer>
+                <Grid item xs={12}>
+                    <footer className={classes.footer}>
+                        <Typography
+                            variant="caption"
+                            align="center"
+                            className={classes.footerText}
+                        >
+                            &copy; Copyright 2015 - {new Date().getFullYear()},
+                            Liam Parker
+                        </Typography>
+                    </footer>
+                </Grid>
             </Grid>
         </>
     );
