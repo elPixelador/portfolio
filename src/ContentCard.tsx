@@ -1,29 +1,16 @@
-import * as React from "react";
-import { makeStyles, Typography } from "@material-ui/core";
-
-const useContentCardStyles = makeStyles((theme) => {
-    return {
-        title: {
-            padding: theme.spacing(1),
-            border: "solid 1px lightgray",
-            borderRadius: 5,
-        },
-    };
-});
+import * as React from 'react'
 
 const ContentSection: React.FunctionComponent<{
-    title: string;
+    children?: React.ReactNode
+    title: string
 }> = (props) => {
-    const { children, title } = props;
-    const classes = useContentCardStyles();
+    const { children, title } = props
     return (
         <div>
-            <Typography className={classes.title} variant="h5" align="center">
-                {title}
-            </Typography>
+            <h4>{title}</h4>
             {children}
         </div>
-    );
-};
+    )
+}
 
-export default ContentSection;
+export default ContentSection
