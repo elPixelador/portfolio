@@ -6,13 +6,31 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = (
 ) => {
     const { elements } = props
     const elementComponents = elements.map((el) => (
-        <li key={el.src} onClick={() => window.open(el.href)}>
-            <img alt={el.primary} src={el.src} />
-            <p>{el.primary}</p>
-            <p>{el.secondary}</p>
-        </li>
+        <div key={el.src}>
+            <img
+                style={{ height: 50, aspectRatio: 'auto', cursor: 'pointer' }}
+                alt={el.primary}
+                src={el.src}
+                onClick={() => window.open(el.href)}
+            />
+        </div>
     ))
-    return <ol>{elementComponents}</ol>
+    return (
+        <div
+            style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                columnGap: 20,
+                backgroundColor: '#181818',
+                borderRadius: 5,
+                padding: '15px 0px',
+            }}
+        >
+            {elementComponents}
+        </div>
+    )
 }
 
 export default ElementList
