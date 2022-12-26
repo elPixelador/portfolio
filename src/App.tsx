@@ -31,10 +31,10 @@ const App: React.FunctionComponent = () => {
                 src="https://avatars3.githubusercontent.com/u/7558040"
                 alt="a portrait of liam"
             />
-            <Heading>Liam Parker</Heading>
+            <Heading>👋 Halløj</Heading>
             <div style={{ maxWidth: '60%' }}>
                 <Paragraph>
-                    👋 I am a{' '}
+                    I'm Liam, I'm a{' '}
                     <HighlightedText>software developer</HighlightedText> based
                     in Melbourne, Australia. My fields of interest lie in
                     software architecture, optimization and 3D computer
