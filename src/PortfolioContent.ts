@@ -9,6 +9,8 @@ import linkedInLogo from './img/linked-in-logo.png'
 
 export interface ElementDetails {
     primary: string
+    title?: string
+    time?: string
     secondary?: string
     href: string
     src: string
@@ -17,6 +19,8 @@ export interface ElementDetails {
 export const employers: ElementDetails[] = [
     {
         primary: 'Learn District',
+        title: 'Junior Developer',
+        time: '2014 - 2016',
         secondary:
             'Childrens Education via organised camps and workshops. I taught children how to code via Stencyl. I helped develop the UI of "The Hole Story" & an unrealeased card game called "Penguemic"',
         href: 'https://www.girlsmakegames.com/learndistrict',
@@ -24,8 +28,10 @@ export const employers: ElementDetails[] = [
     },
     {
         primary: 'Spiff Commerce',
+        title: 'Technical Lead',
+        time: 'Nov 2017 - Current',
         secondary:
-            'Product personalization & fulfillment automation platform. I currently serve as technical lead and help guide many aspects of the company, including, Architecture, security, features & general management.',
+            'Product personalization & fulfillment automation platform. I help guide many aspects of the company, including, Architecture, security, features & general management.',
         href: 'https://developer.spiffcommerce.com/',
         src: spiffLogo,
     },

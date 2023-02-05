@@ -119,13 +119,29 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
                             style={{
                                 borderTop: '1px solid rgba(10, 10, 10, 0.2)',
                                 height: '60%',
-                                padding: 20,
+                                padding: 10,
                                 textAlign: 'center',
                                 overflowY: 'auto',
                             }}
                         >
-                            <h2>{elements[i]?.primary}</h2>
-                            <p>{elements[i]?.secondary}</p>
+                            <h3 style={{ margin: 0 }}>
+                                {elements[i]?.primary}
+                            </h3>
+                            <h5 style={{ margin: 0, marginTop: 5 }}>
+                                {elements[i]?.title}
+                            </h5>
+                            <h6 style={{ margin: 0, marginTop: 5 }}>
+                                {elements[i]?.time}
+                            </h6>
+                            <p
+                                style={{
+                                    fontSize: '0.85em',
+                                    margin: 0,
+                                    marginTop: 5,
+                                }}
+                            >
+                                {elements[i]?.secondary}
+                            </p>
                         </div>
                     </animated.div>
                 </animated.div>
