@@ -1,4 +1,4 @@
-import spiffLogo from './img/spiff-logo.png'
+import spiffLogo from './img/spiff-commerce-logo-dark.svg'
 import ldLogo from './img/ld-logo.png'
 import lazuriteLogo from './img/lazurite-logo.png'
 import pyriteLogo from './img/pyrite-logo.png'
@@ -16,16 +16,17 @@ export interface ElementDetails {
 
 export const employers: ElementDetails[] = [
     {
-        primary: 'Spiff Commerce',
-        secondary: 'Product Personalization & Fulfillment Automation Platform',
-        href: 'https://developer.spiffcommerce.com/',
-        src: spiffLogo,
-    },
-    {
         primary: 'Learn District',
         secondary: 'Childrens Education',
         href: 'https://www.girlsmakegames.com/learndistrict',
         src: ldLogo,
+    },
+    {
+        primary: 'Spiff Commerce',
+        secondary:
+            'Product personalization & fulfillment automation platform. I currently serve as technical lead and help guide many aspects of the company, including, Architecture, security, features & general management.',
+        href: 'https://developer.spiffcommerce.com/',
+        src: spiffLogo,
     },
 ]
 

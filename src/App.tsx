@@ -31,8 +31,9 @@ const App: React.FunctionComponent = () => {
                 src="https://avatars3.githubusercontent.com/u/7558040"
                 alt="a portrait of liam"
             />
-            <Heading>👋 Halløj</Heading>
-            <div style={{ maxWidth: '60%' }}>
+            <Heading>Halløj 👋</Heading>
+            <MiniElementList elements={mediaLinks} />
+            <div style={{ maxWidth: '60%', textAlign: 'center' }}>
                 <Paragraph>
                     I'm Liam, I'm a{' '}
                     <HighlightedText>software developer</HighlightedText> based
@@ -41,16 +42,19 @@ const App: React.FunctionComponent = () => {
                     graphics.
                 </Paragraph>
             </div>
-            <MiniElementList elements={mediaLinks} />
-            <ContentSection title="Employment History">
-                <ElementList elements={employers} />
-            </ContentSection>
-            <ContentSection title="Personal Projects">
-                <ElementList elements={projects} />
-            </ContentSection>
-            <ContentSection title="Open Source Contributions">
-                <ElementList elements={contributions} />
-            </ContentSection>
+            <div
+                style={{
+                    display: 'flex',
+                    flexBasis: '20%',
+                    flexWrap: 'wrap',
+                    width: '100%',
+                }}
+            >
+                <ContentSection title="Employment History">
+                    <ElementList elements={employers} />
+                </ContentSection>
+            </div>
+
             <footer>
                 <Paragraph>Made with ❤️ by Liam Parker</Paragraph>
             </footer>
@@ -75,3 +79,12 @@ export const HighlightedText: React.FunctionComponent<{
 }> = ({ children }) => <span style={{ fontWeight: 'bold' }}>{children}</span>
 
 export default App
+
+/**
+ *                 <ContentSection title="Personal Projects">
+                    <ElementList elements={projects} />
+                </ContentSection>
+                <ContentSection title="Open Source Contributions">
+                    <ElementList elements={contributions} />
+                </ContentSection>
+ */
