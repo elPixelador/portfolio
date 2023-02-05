@@ -121,7 +121,7 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
                                 height: '60%',
                                 padding: 20,
                                 textAlign: 'center',
-                                overflow: 'scroll',
+                                overflowY: 'auto',
                             }}
                         >
                             <h2>{elements[i]?.primary}</h2>
