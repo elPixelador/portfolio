@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { SubHeading } from './App'
+import { Heading } from './App'
 
 const ContentSection: React.FunctionComponent<{
     children?: React.ReactNode
@@ -15,7 +15,7 @@ const ContentSection: React.FunctionComponent<{
                 width: '100%',
             }}
         >
-            <SubHeading>{title}</SubHeading>
+            <Heading>{title}</Heading>
             {children}
         </div>
     )

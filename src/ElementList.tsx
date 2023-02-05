@@ -96,22 +96,25 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
                     >
                         <div
                             style={{
-                                height: '30%',
+                                height: '40%',
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}
                         >
                             <img
-                                style={{ maxWidth: '70%' }}
+                                style={{
+                                    maxWidth: '80%',
+                                    maxHeight: '80%',
+                                }}
                                 src={elements[i]?.src}
-                                alt=""
+                                alt={elements[i]?.primary}
                                 draggable={false}
                             />
                         </div>
                         <div
                             style={{
-                                height: '70%',
+                                height: '60%',
                                 padding: 20,
                                 textAlign: 'center',
                             }}

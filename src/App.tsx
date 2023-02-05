@@ -53,6 +53,12 @@ const App: React.FunctionComponent = () => {
                 <ContentSection title="Employment History">
                     <ElementList elements={employers} />
                 </ContentSection>
+                <ContentSection title="Personal Projects">
+                    <ElementList elements={projects} />
+                </ContentSection>
+                <ContentSection title="Open Source Contributions">
+                    <ElementList elements={contributions} />
+                </ContentSection>
             </div>
 
             <footer>
@@ -79,12 +85,3 @@ export const HighlightedText: React.FunctionComponent<{
 }> = ({ children }) => <span style={{ fontWeight: 'bold' }}>{children}</span>
 
 export default App
-
-/**
- *                 <ContentSection title="Personal Projects">
-                    <ElementList elements={projects} />
-                </ContentSection>
-                <ContentSection title="Open Source Contributions">
-                    <ElementList elements={contributions} />
-                </ContentSection>
- */
