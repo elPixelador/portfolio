@@ -10,6 +10,18 @@ import {
 import ElementList from './ElementList'
 import MiniElementList from './MiniElementList'
 
+const getBrowserLangGreeting = () => {
+    console.log('Language Detected: ' + navigator.language)
+    switch (navigator.language) {
+        case 'en-US':
+            return 'Hello'
+        case 'da-DK':
+            return 'Halløj'
+        default:
+            return 'Hello'
+    }
+}
+
 const App: React.FunctionComponent = () => {
     const isSmall = window.innerWidth < 600
     return (
@@ -31,7 +43,7 @@ const App: React.FunctionComponent = () => {
                 src="https://avatars3.githubusercontent.com/u/7558040"
                 alt="a portrait of liam"
             />
-            <Heading>Halløj 👋</Heading>
+            <Heading>{getBrowserLangGreeting()} 👋</Heading>
             <MiniElementList elements={mediaLinks} />
             <div
                 style={{
