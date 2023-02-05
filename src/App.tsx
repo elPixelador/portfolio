@@ -33,7 +33,12 @@ const App: React.FunctionComponent = () => {
             />
             <Heading>Halløj 👋</Heading>
             <MiniElementList elements={mediaLinks} />
-            <div style={{ maxWidth: '60%', textAlign: 'center' }}>
+            <div
+                style={{
+                    maxWidth: isSmall ? '90%' : '60%',
+                    textAlign: 'center',
+                }}
+            >
                 <Paragraph>
                     I'm Liam, I'm a{' '}
                     <HighlightedText>software developer</HighlightedText> based
