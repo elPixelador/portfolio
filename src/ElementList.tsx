@@ -27,8 +27,11 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
     const [props, api] = useSprings(elements.length, (i) => ({
         ...to(i),
         from: from(i),
-    })) // Create a bunch of springs using the helpers above
-    // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+    }))
+
+    const isMobile = window.innerWidth < 600
+    const cardHeight = isMobile ? '50vh' : '40vh'
+
     const bind = useDrag(
         ({
             args: [index],
@@ -37,18 +40,18 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
             direction: [xDir],
             velocity: [vx],
         }) => {
-            const trigger = vx > 0.2 // If you flick hard enough it should trigger the card to fly out
-            if (!active && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+            const trigger = vx > 0.2
+            if (!active && trigger) gone.add(index)
             api.start((i) => {
-                if (index !== i) return // We're only interested in changing spring-data for the current spring
+                if (index !== i) return
                 const isGone = gone.has(index)
                 const x = isGone
                     ? (200 + window.innerWidth) * xDir
                     : active
                     ? mx
-                    : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
-                const rot = mx / 100 + (isGone ? xDir * 10 * vx : 0) // How much the card tilts, flicking it harder makes it rotate faster
-                const scale = active ? 1.1 : 1 // Active cards lift up a bit
+                    : 0
+                const rot = mx / 100 + (isGone ? xDir * 10 * vx : 0)
+                const scale = active ? 1.1 : 1
                 return {
                     x,
                     rot,
@@ -76,7 +79,7 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
                 justifyContent: 'center',
                 cursor: `url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 20 20, auto`,
                 width: '100%',
-                height: '40vh',
+                height: cardHeight,
             }}
         >
             {props.map(({ x, y, rot, scale }, i) => (
@@ -114,9 +117,11 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
                         </div>
                         <div
                             style={{
+                                borderTop: '1px solid rgba(10, 10, 10, 0.2)',
                                 height: '60%',
                                 padding: 20,
                                 textAlign: 'center',
+                                overflow: 'scroll',
                             }}
                         >
                             <h2>{elements[i]?.primary}</h2>
