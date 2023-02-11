@@ -17,6 +17,8 @@ const getBrowserLangGreeting = () => {
             return 'Hello'
         case 'da-DK':
             return 'Halløj'
+        case 'es-ES':
+            return 'Hola'
         default:
             return 'Hello'
     }

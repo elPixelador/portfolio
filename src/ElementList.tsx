@@ -103,6 +103,11 @@ const ElementList: React.FunctionComponent<{ elements: ElementDetails[] }> = ({
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
+                                backgroundImage: `url(${elements[i]?.mediaSrc})`,
+                                backgroundSize: 'cover',
+                                backgroundOrigin: 'center',
+                                borderTopLeftRadius: 8,
+                                borderTopRightRadius: 8,
                             }}
                         >
                             <img

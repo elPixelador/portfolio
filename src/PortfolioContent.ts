@@ -3,7 +3,9 @@ import ldLogo from './img/ld-logo.png'
 import lazuriteLogo from './img/lazurite-logo.png'
 import pyriteLogo from './img/pyrite-logo.png'
 import openrct2Logo from './img/openrct2-logo.png'
+import openrct2Media from './img/rct2.webp'
 import babylonLogo from './img/babylon-logo.png'
+import babylonMedia from './img/babylonjs.webp'
 import githubLogo from './img/github-logo.png'
 import linkedInLogo from './img/linked-in-logo.png'
 
@@ -14,6 +16,7 @@ export interface ElementDetails {
     secondary?: string
     href: string
     src: string
+    mediaSrc?: string
 }
 
 export const employers: ElementDetails[] = [
@@ -56,18 +59,20 @@ export const projects: ElementDetails[] = [
 
 export const contributions: ElementDetails[] = [
     {
-        primary: 'OpenRCT2',
-        secondary:
-            "Open Source engine implementation of the cult classic Roller Coaster Tycoon 2, One of my favorite games as a kid. I've helped fix several UI bugs over the years. Every now and then I find the drive to boot it up and help out where I can.",
-        href: 'https://openrct2.org/',
-        src: openrct2Logo,
-    },
-    {
         primary: 'BabylonJS',
         secondary:
             "WebGL Rendering Framework, I've used this in several projects and have contributed code towards a feature called multi views.",
         href: 'https://www.babylonjs.com/',
         src: babylonLogo,
+        mediaSrc: babylonMedia,
+    },
+    {
+        primary: 'OpenRCT2',
+        secondary:
+            "Open Source engine implementation of the cult classic Roller Coaster Tycoon 2, One of my favorite games as a kid. I've helped fix several UI bugs over the years. Every now and then I find the drive to boot it up and help out where I can.",
+        href: 'https://openrct2.org/',
+        src: openrct2Logo,
+        mediaSrc: openrct2Media,
     },
 ]
 
