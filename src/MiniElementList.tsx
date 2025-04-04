@@ -5,7 +5,15 @@ const MiniElementList: React.FunctionComponent<{
     elements: ElementDetails[]
 }> = ({ elements }) => {
     return (
-        <div style={{ display: 'flex', columnGap: 20, marginTop: 20 }}>
+        <div
+            style={{
+                display: 'flex',
+                columnGap: 20,
+                marginTop: 20,
+                marginBottom: 20,
+                justifyContent: 'center',
+            }}
+        >
             {elements.map((el) => (
                 <a
                     key={el.href}

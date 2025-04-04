@@ -7,14 +7,7 @@ const ContentSection: React.FunctionComponent<{
 }> = (props) => {
     const { children, title } = props
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                width: '100%',
-            }}
-        >
+        <div style={{ paddingTop: 30, paddingBottom: 30 }}>
             <Heading>{title}</Heading>
             {children}
         </div>

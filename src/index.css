@@ -1,0 +1,13 @@
+html {
+    background-color: rgb(230, 230, 230);
+}
+
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
