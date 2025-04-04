@@ -33,7 +33,7 @@ export const employers: ElementDetails[] = [
         title: 'Junior Developer',
         time: '2014 - 2016',
         secondary:
-            'Childrens Education via organised camps and workshops. I taught children how to code via Stencyl. I helped develop the UI of "The Hole Story" & an unrealeased card game called "Penguemic"',
+            'Childrens Education via organised camps and workshops. I taught children how to code via Stencyl. I helped develop the UI of "The Hole Story" & an unreleased virtual card game called "Penguemic".',
         href: 'https://www.girlsmakegames.com/learndistrict',
         src: ldLogo,
         fit: 'contain',
