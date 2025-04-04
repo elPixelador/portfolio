@@ -66,7 +66,9 @@ const App: React.FunctionComponent = () => {
                 <ElementList elements={contributions} />
             </ContentSection>
             <footer>
-                <Paragraph>Made with ❤️ by Liam Parker</Paragraph>
+                <Paragraph style={{ textAlign: 'center' }}>
+                    Made with ❤️ by Liam Parker
+                </Paragraph>
             </footer>
         </div>
     )

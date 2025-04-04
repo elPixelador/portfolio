@@ -8,7 +8,7 @@ const ContentSection: React.FunctionComponent<{
     const { children, title } = props
     return (
         <div style={{ paddingTop: 30, paddingBottom: 30 }}>
-            <Heading>{title}</Heading>
+            <Heading style={{ textAlign: 'center' }}>{title}</Heading>
             {children}
         </div>
     )
